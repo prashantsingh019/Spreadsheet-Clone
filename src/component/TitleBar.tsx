@@ -1,5 +1,5 @@
 function TitleBar(){
-    return <section className="h-[5%] flex justify-between p-1">
+    return <section className="h-[5%] flex justify-between p-1 text-[14px]">
           <div className="left-sect flex items-center gap-1 text-[#AFAFAF] font-medium">
              <button className="border-none"><img src="./Panel.svg"/></button>
              <a>Workspace</a>
