@@ -1,9 +1,9 @@
-import React from 'react'
+import Sheet from "./Sheet"
 
 function SpreadSheetBody() {
   return (
-    <div>
-        
+    <div className="h-[80%] w-full">
+        <Sheet/>
     </div>
   )
 }
