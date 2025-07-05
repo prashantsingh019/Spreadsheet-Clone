@@ -2,7 +2,7 @@
 
 function FormulaBar() {
   return (
-        <section className="h-[5%] w-full pl-6 flex justify-between text-[12px]">
+        <section className="h-[6.5%] w-full pl-6 flex justify-between text-[12px] border border-red-900">
           <div className="left bg-[#E2E2E2] w-[50%]">
             <div className="formula-bar flex items-center gap-2 ">
               <div className="tab flex items-center gap-2 bg-[#EEEEEE] border border-[#EEEEEE] p-2">

@@ -5,37 +5,37 @@ import ToolBar from "./component/ToolBar";
 import FormulaBar from "./component/FormulaBar";
 import SpreadSheetBody from "./component/SpreadSheetBody";
 import SheetBar from "./component/SheetBar";
+import { useState } from "react";
 
-// import Column from "./component/Column";
 function App() {
-  // const row = 16;
-  // const column = 10;
+  const [sheets, setSheets] = useState([
+    "All Orders",
+    "Pending",
+    "Reviewed",
+    "Arrived",
+  ]);
+  const [activeSheet, setActiveSheet] = useState(0);
+  console.log(activeSheet);
+  
+  // const handleTab = (sheetname:string) => {
+  //     setSheets(sheetname);
+  // }
   return (
-    <>
-      <main className="w-screen h-screen flex flex-col overflow-hidden bg-[#FFFFFF] ">
+    <main className="w-screen h-screen flex flex-col gap-1 overflow-hidden bg-[#FFFFFF] ">
+      <TitleBar /> {/* height: 8% */}
+      <ToolBar /> {/* height: 7% */}
+      <FormulaBar /> {/* height: 6.5% */}
+      <SpreadSheetBody /> {/*height: 60%*/}
 
-        <TitleBar/>       {/* height: 5% */}
-        <ToolBar />        {/* height: 5% */}
-        <FormulaBar/>     {/* height: 5% */}
-        <SpreadSheetBody /> {/*height: 80%*/}
-        <SheetBar />         {/*height: 5%*/}
-
-
-
-
-
-
-      
-      </main>
-    </>
+      <SheetBar
+        sheets={sheets}
+        setSheets={setSheets}
+        activeSheet={activeSheet}
+        setActiveSheet={setActiveSheet}
+      />{" "}
+      {/*height: 5%*/}
+    </main>
   );
 }
 
 export default App;
-
-
-
-{/*
-  
-  
-  */}
