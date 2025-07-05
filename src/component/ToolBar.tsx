@@ -1,6 +1,6 @@
 function ToolBar() {
   return (
-    <section className="h-[5%] w-full flex justify-between p-1 text-[14px]">
+    <section className="h-[7%] w-full flex justify-between p-1 text-[14px] border border-red-900">
       <div className="left flex items-center gap-3">
         <div className="flex items-center gap-1 hover:bg-gray-200 p-1 cursor-pointer rounded transition-all">
           <img src="./Chevron Double.svg" />

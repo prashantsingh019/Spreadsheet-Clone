@@ -1,7 +1,7 @@
 function TitleBar() {
 
   return (
-    <section className="h-[5%] w-full flex justify-between p-1 text-[14px]">
+    <section className="h-[8%] w-full flex justify-between p-1 text-[14px] border border-red-900">
       <div className="left-sect flex items-center gap-1 text-[#AFAFAF] font-medium">
         <button className="border-none">
           <img src="./Panel.svg" />

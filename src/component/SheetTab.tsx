@@ -49,6 +49,7 @@ function SheetTab({
       contentEditable={isEditable}
       className={`font-bold h-[98%] bg[#E8F0E9] sheet-tab px-4 py-[10px] flex items-center mr-1 cursor-pointer
       
+      outline-none
       ${
         activeSheet === index
           ? "border-t-2 border-[#3E5741] text-[#3E5741]"
