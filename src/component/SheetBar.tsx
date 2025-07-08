@@ -19,7 +19,7 @@ function SheetBar({
   };
 
   return (
-    <div className="h-[5%] w-full border border-red-900 flex items-center p-0.5">
+    <div className="h-[5%] w-full border flex items-center p-0.5">
       {sheets.map((sheet, index) => {
         return (
           <SheetTab

@@ -1,20 +1,20 @@
 function TitleBar() {
 
   return (
-    <section className="h-[8%] w-full flex justify-between p-1 text-[14px] border border-red-900">
+    <section className="h-[8%] w-full flex justify-between p-1 text-[14px] border ">
       <div className="left-sect flex items-center gap-1 text-[#AFAFAF] font-medium">
         <button className="border-none">
           <img src="./Panel.svg" />
         </button>
-        <a>Workspace</a>
+        <a className="text-[14px] font-normal">Workspace</a>
         <div className="icon">
           <img src="./Chevron.svg" />
         </div>
-        <a>Folder 2</a>
+        <a className="text-[14px] font-normal">Folder 2</a>
         <div className="icon">
           <img src="./Chevron.svg" />
         </div>
-        <a>Spreadsheet 3</a>
+        <a className="text-black text-[14px] font-normal">Spreadsheet 3</a>
         <div className="icon">
           <img src="./Icon frame.svg" />
         </div>
@@ -27,7 +27,7 @@ function TitleBar() {
           <input
             type="text"
             placeholder="Search within sheet"
-            className="bg-[#F6F6F6] outline-none"
+            className="bg-[#F6F6F6] outline-none text-[12px]"
           />
         </div>
         <div className="icon">

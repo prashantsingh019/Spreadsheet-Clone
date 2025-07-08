@@ -21,11 +21,11 @@ function App() {
   //     setSheets(sheetname);
   // }
   return (
-    <main className="w-screen h-screen flex flex-col gap-1 overflow-hidden bg-[#FFFFFF] ">
+    <main className="w-screen h-screen flex flex-col gap-.5 overflow-hidden bg-[#FFFFFF] ">
       <TitleBar /> {/* height: 8% */}
       <ToolBar /> {/* height: 7% */}
       <FormulaBar /> {/* height: 6.5% */}
-      <SpreadSheetBody /> {/*height: 60%*/}
+      <SpreadSheetBody /> {/*height: 73.5%%*/}
 
       <SheetBar
         sheets={sheets}

@@ -2,25 +2,85 @@ import { useState } from "react";
 
 type cellData = string[][];
 
+type Column = {
+  headerName: string;
+  iconUrl: string;
+  color: string;
+  bgColor: string;
+};
 export default function Sheet() {
   const rows = 50;
-  const cols = 9;
+  const cols = 10;
 
   const [columnWidth, setColumnWidth] = useState<number[]>(() => {
     const widths = Array(cols).fill(122);
     widths[0] = 260; // First column wider
     return widths;
   });
-  const [columns] = useState<string[]>([
-    "Job Request",
-    "Submitted",
-    "Status",
-    "Submitter",
-    "URL",
-    "Assigned",
-    "Priority",
-    "Due Date",
-    "Est. Value",
+
+  const [columns] = useState<Column[]>([
+    {
+      headerName: "Job Request",
+      iconUrl: "./Icons for headers/briefcase.svg",
+      color: "",
+      bgColor: "",
+    },
+
+    {
+      headerName: "Submitted",
+      iconUrl: "./Icons for headers/Calendar.svg",
+      color: "",
+      bgColor: "",
+    },
+
+    {
+      headerName: "Status",
+      iconUrl: "./Icons for headers/Chevron Circle.svg",
+      color: "",
+      bgColor: "",
+    },
+
+    {
+      headerName: "Submitter",
+      iconUrl: "./Icons for headers/Person.svg",
+      color: "",
+      bgColor: "",
+    },
+
+    {
+      headerName: "URL",
+      iconUrl: "./Icons for headers/Globe.svg",
+      color: "",
+      bgColor: "",
+    },
+
+    {
+      headerName: "Assigned",
+      iconUrl: "./Icons for headers/Emoji.svg",
+      color: "",
+      bgColor: "",
+    },
+
+    {
+      headerName: "Priority",
+      iconUrl: "",
+      color: "#655C80",
+      bgColor: "#EAE3FC",
+    },
+
+    {
+      headerName: "Due Date",
+      iconUrl: "",
+      color: "#655C80",
+      bgColor: "#EAE3FC",
+    },
+
+    {
+      headerName: "Est. Value",
+      iconUrl: "",
+      color: "#8C6C62",
+      bgColor: "#FFE9E0",
+    },
   ]);
 
   const [data] = useState<cellData>(() => {
@@ -128,11 +188,11 @@ export default function Sheet() {
   };
 
   return (
-    <div className="flex flex-col overflow-y-scroll h-full">
+    <div className="flex flex-col overflow-y-scroll h-full text-[#121212]">
       {/* Header Row */}
       <section className="flex bg-gray-200">
         {/* Row number header */}
-        <div className="w-[32px] min-w-[32px] flex justify-center items-center border border-white bg-gray-300">
+        <div className="w-[32px] min-w-[32px] flex justify-center items-center border text-[#757575] border-white bg-[#EEEEEE]">
           #
         </div>
 
@@ -146,9 +206,24 @@ export default function Sheet() {
           {columns.map((colName, i) => (
             <div
               key={i}
-              className="relative py-0.5 text-center bg-[#e2e1e1] pr-5 pl-2 border border-white"
+              className={`
+ 
+  font-semibold flex justify-between items-center relative py-0.5 text-center pr-5 pl-2 border border-white
+`}
+              style={{
+                color: colName.color || "#757575",
+                backgroundColor: colName.bgColor || "#e2e1e1",
+              }}
             >
-              {colName}
+              <span className="flex gap-1 items-center">
+                {colName.iconUrl !== "" ? (
+                  <img src={colName.iconUrl} className="w-4 h-4" />
+                ) : (
+                  ""
+                )}
+                {colName.headerName}
+              </span>
+
               <div
                 className="absolute top-0 right-0 w-1 h-full cursor-col-resize z-10"
                 onMouseDown={(e) => handleColumnResize(e, i)}
@@ -162,7 +237,7 @@ export default function Sheet() {
       {data.map((row, rowIndex) => (
         <div key={rowIndex} className="flex">
           {/* Row number */}
-          <div className="w-[32px] min-w-[32px] border border-gray-300 flex justify-center items-center">
+          <div className="text-[#757575] text-[14px] w-[32px] min-w-[32px] border border-gray-300 flex justify-center items-center">
             {rowIndex + 1}
           </div>
 
@@ -183,24 +258,25 @@ export default function Sheet() {
                   contentEditable={isEditing}
                   tabIndex={0}
                   className={`truncate overflow-hidden whitespace-nowrap text-[12px] w-full border border-gray-300 flex items-center  min-h-[30px] h-[30px] px-1 py-0.5 outline-none ${
-                    isEditing ? "border-green-700" : "" 
+                    isEditing ? "border-green-700" : ""
                   }`}
                   onClick={() => setEditingCell([rowIndex, colsIndex])}
                   onKeyDown={(e) => ArrowMovements(e, rowIndex, colsIndex)}
                 >
-                  {colsIndex === 2 ? (
+                  {colsIndex === 2 || colsIndex === 6? (
                     <span
                       className={`px-2 py-[2px] rounded-full text-xs font-medium
         ${
           cell === "In-process"
-            ? "bg-yellow-100 text-yellow-800"
+            ? "bg-[#FFF3D6] text-[#85640B]"
             : cell === "Blocked"
             ? "bg-red-100 text-red-800"
             : cell === "Complete"
             ? "bg-green-100 text-green-800"
             : cell === "Need to start"
-            ? "bg-blue-100 text-blue-800"
-            : ""
+            ? "bg-[#E2E8F0] text-[#475569]"
+            : cell === "Low" ?"bg-[#E2E8F0] text-[#1A8CFF]":
+            cell === "Medium"?"text-[#C29210]":cell === "High" ? "text-[#EF4D44]":''
         }
       `}
                     >

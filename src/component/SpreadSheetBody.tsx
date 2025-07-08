@@ -2,7 +2,7 @@ import Sheet from "./Sheet"
 
 function SpreadSheetBody() {
   return (
-    <div className="h-[70.5%] w-full border border-red-900 mb-0">
+    <div className="h-[73.5%] w-full border mb-0">
          
         <Sheet/>
         {/* <Sheet/> */}
