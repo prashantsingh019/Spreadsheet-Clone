@@ -1,5 +1,4 @@
 function TitleBar() {
-
   return (
     <section className="h-[8%] w-full flex justify-between p-1 text-[14px] border ">
       <div className="left-sect flex items-center gap-1 text-[#AFAFAF] font-medium">

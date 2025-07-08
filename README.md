@@ -34,7 +34,6 @@ A front-end-only spreadsheet prototype built in React + TypeScript that mimics k
   🎨 Tailwind
 
   how to run application
-
   1. By ZIP file
      Step-1 : I had provided a zip file simply unzip it and open it in any IDE (for ex VS Code)
      Step-2 : open terminal and type a npm command "npm install" it will simply install all required packages for running the application.
@@ -47,4 +46,3 @@ A front-end-only spreadsheet prototype built in React + TypeScript that mimics k
      npm run dev
 
   Thanks for your time.
-  
