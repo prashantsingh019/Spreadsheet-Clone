@@ -4,9 +4,9 @@ function FormulaBar() {
   return (
         <section className="h-[6.5%] w-full pl-8 flex justify-between text-[12px] items-center">
 
-          <div className="left bg-[#E2E2E2] w-[631px] h-[88%] pt-1">
+          <div className="left bg-[#E2E2E2] w-[631px] h-[88%]">
 
-            <div className="p-1 h-[90%] formula-bar flex items-center  gap-2">
+            <div className="p-1 h-[90%] formula-bar flex items-center gap-2">
            
               <div className="tab flex rounded bg-[#EEEEEE] border border-[#EEEEEE] p-1 text-[#545454]">
                 {" "}
